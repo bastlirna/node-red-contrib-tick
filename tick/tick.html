@@ -1,0 +1,60 @@
+<!-- Data Template -->
+<script type="text/x-red" data-template-name="tick">
+    <div class="form-row">
+        <label for="node-input-interval"><i class="fa fa-clock-o"></i> Interval [ms]</label>
+        <input type="text" id="node-input-interval" placeholder="Interval">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<!-- Help -->
+<script type="text/x-red" data-help-name="tick">
+    <p>
+        Tick node emits message periodically in given interval.</p>
+    </p>
+    <p>
+        Message is emitted relative to <strong>system time</strong>. 
+        When <code>time <i>modulo</i> interval = 0</code> is satisfy node ticks.
+    </p>
+    <p>
+        Message is emitted relative to system time. When time modulo interval = 0 is satisfy node ticks. This is different from inject 
+        node in repeat mode which is relative to deploy (e. g. 1 second from deploy not when system time is exactly whole second).   
+    </p>
+    <p>
+        Outputs message containing <code>msg.payload</code> and <code>msg.error</code>.</p>
+        <ul>
+            <li><code>msg.payload</code> is counter (increases by 1 every tick).</li>
+            <li><code>msg.error</code> is difference from desired tick time (in ms).</li>
+        <ul>
+    </p>
+</script>
+
+<!-- Register Node -->
+<script type="text/javascript">
+    RED.nodes.registerType('tick', {
+        category: 'input',
+        color: '#E6E0F8',
+        inputs: 0,
+        outputs: 1,
+        defaults: {
+            name: {
+                value: ""
+            },
+            interval: {
+                value: 1000,
+                validate: RED.validators.number(),
+                required: true
+            }
+        },
+        icon: "tick.png",
+        label: function() {
+                return this.name || "Tick";
+        },
+        labelStyle: function() {
+                return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>
