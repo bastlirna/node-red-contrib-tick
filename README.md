@@ -23,3 +23,6 @@ Outputs message containing `msg.payload` and `msg.error`.
 - msg.payload is counter (increases by 1 every tick)
 - msg.error is difference from desired tick time (in ms)
 
+## Icon credit
+
+The node icon made by [Freepik](http://www.freepik.com) from [www.flaticon.com](http://www.flaticon.com) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
