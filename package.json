@@ -1,0 +1,27 @@
+{
+    "name": "node-red-contrib-tick",
+    "version": "0.0.1",
+    "description": "Tick node emits message periodically in given interval",
+    "dependencies": {},
+    "keywords": [
+        "node-red"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://https://github.com/bastlirna/node-red-contrib-tick.git"
+    },
+    "author": {
+        "name": "Adam Horcica",
+        "email": "a.horcica@sh.cvut.cz"
+    },
+    "bugs": {
+        "url": "https://github.com/bastlirna/node-red-contrib-tick/issues"
+    },
+    "homepage": "https://github.com/bastlirna/node-red-contrib-tick#readme",
+    "license": "MIT",
+    "node-red": {
+        "nodes": {
+            "tick": "tick/tick.js"
+        }
+    }
+}
